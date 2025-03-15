@@ -12,7 +12,6 @@ const MovieCard = ({ movie }) => {
   const [playTrailer, setPlayTrailer] = useState(false);
 
   useEffect(() => {
-    // Fetch trailer data on hover, but don't play it automatically
     if (isHovering && !trailer) {
       setIsLoading(true);
       fetchMovieTrailer(movie.id)
@@ -23,13 +22,11 @@ const MovieCard = ({ movie }) => {
         .catch(() => setIsLoading(false));
     }
     
-    // Reset play state when not hovering
     if (!isHovering) {
       setPlayTrailer(false);
     }
   }, [movie.id, isHovering, trailer]);
 
-  // Format release date to show year only
   const releaseYear = movie.release_date
     ? new Date(movie.release_date).getFullYear()
     : "";
@@ -41,7 +38,6 @@ const MovieCard = ({ movie }) => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        {/* Show trailer if play button was clicked and trailer is available */}
         {playTrailer && trailer ? (
           <div className="trailer-container">
             <ReactPlayer
@@ -70,14 +66,12 @@ const MovieCard = ({ movie }) => {
           />
         )}
 
-        {/* Loading indicator for trailer */}
         {isHovering && isLoading && (
           <div className="loading-trailer">
             <div className="spinner"></div>
           </div>
         )}
 
-        {/* Overlay buttons when hovering */}
         {isHovering && !playTrailer && !isLoading && (
           <div className="movie-hover-overlay">
             <div className="overlay-buttons">
@@ -90,15 +84,13 @@ const MovieCard = ({ movie }) => {
               >
                 Watch Trailer
               </button>
-              <a 
-                href={`/movie/${movie.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="details-button"
+              <Link 
+                to={`/movie/${movie.id}`} 
+                className="details-button" 
                 onClick={(e) => e.stopPropagation()}
               >
                 Movie Details
-              </a>
+              </Link>
             </div>
           </div>
         )}
