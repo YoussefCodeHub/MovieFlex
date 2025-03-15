@@ -1,0 +1,220 @@
+/* Genres.css - Styling for the Genres page */
+
+.genres-page {
+  padding-top: 80px; /* Space for fixed navbar */
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Light and Dark Mode */
+.genres-page.dark {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+.genres-page.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Genre Buttons */
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.genre-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Light Mode */
+.genres-page.light .genre-button {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Dark Mode */
+.genres-page.dark .genre-button {
+  background-color: #ffffff; /* White background */
+  color: #121212; /* Dark text */
+}
+
+/* Hover Effect */
+.genre-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Active Genre */
+.genre-button.active {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
+}
+
+/* Genre Title */
+.genre-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Movies Grid */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+/* No Movies Message */
+.no-movies {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem 0;
+  color: #dc3545;
+}
+
+.genre-selection-prompt {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem 0;
+  font-style: italic;
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 15px;
+}
+
+.pagination-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.pagination-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Page Numbers */
+.page-numbers {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.page-number {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Light Mode */
+.genres-page.light .page-number {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+/* Dark Mode - Ensures non-active buttons stay white */
+.genres-page.dark .page-number {
+  background-color: #ffffff; /* White background */
+  color: #121212; /* Dark text for contrast */
+}
+
+/* Hover Effect */
+.page-number:hover:not(.active) {
+  background-color: rgba(220, 53, 69, 0.2); /* Light red tint */
+  color: #dc3545;
+}
+
+/* Active Page Number */
+.page-number.active {
+  background-color: #dc3545 !important; /* Solid red */
+  color: white !important;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+  font-weight: 600;
+}
+
+/* Page Ellipsis */
+.page-ellipsis {
+  color: #6c757d;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .genre-buttons {
+    gap: 8px;
+  }
+
+  .genre-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .genre-title {
+    font-size: 1.5rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+}

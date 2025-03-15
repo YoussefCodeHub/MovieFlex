@@ -1,0 +1,33 @@
+:root {
+  --bg-dark: #111;
+  --text-dark: #fff;
+  --nav-dark: #222;
+  --button-dark: #444;
+
+  --bg-light: #f4f4f4;
+  --text-light: #222;
+  --nav-light: #ddd;
+  --button-light: #888;
+}
+
+.dark {
+  --bg: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --nav-bg: var(--nav-dark);
+  --button-bg: var(--button-dark);
+  --button-text: var(--text-dark);
+}
+
+.light {
+  --bg: var(--bg-light);
+  --text-color: var(--text-light);
+  --nav-bg: var(--nav-light);
+  --button-bg: var(--button-light);
+  --button-text: var(--text-light);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}

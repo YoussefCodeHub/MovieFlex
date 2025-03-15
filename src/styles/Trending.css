@@ -1,0 +1,79 @@
+/* Trending.css */
+.trending-page {
+    padding-top: 80px;
+    min-height: 100vh;
+  }
+  
+  .trending-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .page-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #777;
+  }
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Dark theme adjustments */
+  .trending-page.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .trending-page.dark .page-description {
+    color: #aaa;
+  }
+  
+  .trending-page.light {
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  /* Loading animation */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .page-description {
+      font-size: 1rem;
+    }
+  }

@@ -1,0 +1,129 @@
+.search-suggestions {
+  position: absolute;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  margin-top: 4px;
+}
+
+.search-suggestions.dark {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.search-suggestions.light {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestion-item {
+  border-bottom: 1px solid;
+  transition: background-color 0.2s ease;
+}
+
+.search-suggestions.dark .suggestion-item {
+  border-color: #444;
+}
+
+.search-suggestions.light .suggestion-item {
+  border-color: #eee;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-suggestions.dark .suggestion-link:hover {
+  background-color: #333;
+}
+
+.search-suggestions.light .suggestion-link:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-content {
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-poster {
+  width: 45px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.no-poster-small {
+  width: 45px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  color: #ddd;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.suggestion-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.suggestion-year {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.view-all-item {
+  text-align: center;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.search-suggestions.dark .view-all-item {
+  background-color: #333;
+}
+
+.search-suggestions.light .view-all-item {
+  background-color: #f8f8f8;
+}
+
+.view-all-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-suggestions.dark .view-all-link {
+  color: #4dabf7;
+}
+
+.search-suggestions.light .view-all-link {
+  color: #1971c2;
+}

@@ -1,0 +1,52 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* Account for fixed navbar */
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark.login-container .login-card {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .light.login-container .login-card {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .login-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .login-submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .login-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link {
+    color: #0d6efd;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .dark .signup-link {
+    color: #5c9eff;
+  }

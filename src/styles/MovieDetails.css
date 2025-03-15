@@ -1,0 +1,544 @@
+/* MovieDetails.css */
+.movie-details {
+  min-height: 100vh;
+  padding-top: 60px; /* Space for navbar */
+  position: relative;
+}
+
+.movie-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center top;
+  z-index: -1;
+}
+
+.backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.movie-details-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.movie-details-main {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.movie-poster-container {
+  flex: 0 0 300px;
+}
+
+.movie-detail-poster {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info-container {
+  flex: 1;
+}
+
+.movie-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.movie-meta-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #666;
+}
+
+.movie-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.genre-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.movie-overview {
+  margin-bottom: 20px;
+}
+
+.movie-details-extra {
+  margin-bottom: 25px;
+}
+
+.detail-item {
+  margin-bottom: 10px;
+}
+
+.detail-label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.movie-action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.watch-trailer-button, .watch-movie-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.watch-trailer-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+}
+
+.watch-movie-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+}
+
+.watch-trailer-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.watch-movie-button:hover {
+  background-color: #f40612;
+}
+
+.play-icon {
+  margin-right: 8px;
+}
+
+/* Improved trailer modal */
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.trailer-modal-content {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.close-trailer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.3s;
+}
+
+.close-trailer:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Watch Options Modal */
+.watch-options-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding-top: 60px; /* Add padding to account for navbar height */
+}
+
+.watch-options-content {
+  width: 90%;
+  max-width: 800px;
+  max-height: calc(90vh - 60px); /* Subtract navbar height from max height */
+  background-color: #141414;
+  border-radius: 10px;
+  overflow-y: auto;
+  position: relative;
+  padding: 30px;
+}
+
+.watch-options-content h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-watch-options {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.3s;
+}
+
+.close-watch-options:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.provider-section {
+  margin-bottom: 20px;
+}
+
+.provider-section h3 {
+  color: #aaa;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.provider-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.provider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.provider-item:hover {
+  transform: scale(1.05);
+}
+
+.provider-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.provider-item span {
+  font-size: 14px;
+  color: white;
+}
+
+.watch-more-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.watch-more-info-button, .tmdb-link-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.watch-more-info-button:hover, .tmdb-link-button:hover {
+  background-color: #f40612;
+}
+
+.no-providers {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.no-providers p {
+  margin-bottom: 15px;
+}
+
+/* Movie modal styles */
+.movie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.movie-modal-content {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.close-movie {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.3s;
+}
+
+.close-movie:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.movie-player-container {
+  width: 100%;
+  height: 100%;
+}
+
+.similar-movies-section {
+  margin-top: 40px;
+}
+
+.similar-movies-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.similar-movies-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.similar-movies-scroll .movie-card-container {
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+/* Loading and error states */
+.movie-details-loading,
+.movie-details-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.spinner-large {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #e50914;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-details-main {
+    flex-direction: column;
+  }
+  
+  .movie-poster-container {
+    max-width: 250px;
+    margin: 0 auto 20px;
+  }
+  
+  .provider-list {
+    justify-content: center;
+  }
+}
+
+/* Light mode specific fixes */
+.movie-details.light .movie-title,
+.movie-details.light .movie-overview h3,
+.movie-details.light .section-title,
+.movie-details.light .detail-label,
+.movie-details.light .detail-value,
+.movie-details.light .movie-meta-info,
+.movie-details.light .movie-overview p {
+  color: #333; /* Dark text in light mode */
+}
+
+.movie-details.light .backdrop-overlay {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.movie-details.light .movie-genres .genre-tag {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.movie-details.light .separator {
+  color: #666;
+}
+
+.movie-details.light .watch-trailer-button {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.movie-details.light .watch-trailer-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Light mode for watch options modal */
+.movie-details.light .watch-options-content {
+  background-color: #f5f5f5;
+}
+
+.movie-details.light .watch-options-content h2,
+.movie-details.light .provider-section h3 {
+  color: #333;
+}
+
+.movie-details.light .provider-item span {
+  color: #333;
+}
+
+.movie-details.light .no-providers {
+  color: #333;
+}
+
+/* Navigation arrows */
+.similar-movies-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.similar-movies-navigation .similar-movies-scroll {
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  padding: 20px 0;
+  margin: 0 40px; /* Make space for arrow buttons */
+}
+
+.nav-arrow {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: absolute;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.nav-arrow.left {
+  left: 0;
+}
+
+.nav-arrow.right {
+  right: 0;
+}
+
+/* Light mode for navigation arrows */
+.movie-details.light .nav-arrow {
+  background-color: rgba(200, 200, 200, 0.8);
+  color: #333;
+}
+
+.movie-details.light .nav-arrow:hover {
+  background-color: rgba(180, 180, 180, 0.9);
+}
+
+/* Ensure similar movies section is visible in light mode */
+.movie-details.light .similar-movies-section .section-title {
+  color: #333;
+}
